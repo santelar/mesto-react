@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <Main />
-      <PopupWithForm title="11111" name="user">
+      <PopupWithForm title="Редактировать профиль" name="user" answer="Сохранить">
         <input type="text" required autoComplete="off" minLength="2" maxLength="40"
           className="popup__input popup__input_name popup__input_name-profile" id="name" name="name" />
         <span id="name-error" className="error"></span>
@@ -22,7 +22,7 @@ function App() {
         <span id="job-error" className="error"></span>
       </PopupWithForm>
 
-      <PopupWithForm title="222222222" name="place">
+      <PopupWithForm title="Новое место" name="place" answer="Создать">
         <input type="text" required autoComplete="off" minLength="2" maxLength="30" placeholder="Название"
           className="popup__input popup__input_name popup__input_name-card" id="picName" name="name" />
         <span id="picName-error" className="error"></span>
@@ -31,13 +31,13 @@ function App() {
         <span id="picLink-error" className="error"></span>
       </PopupWithForm>
 
-      <PopupWithForm title="халва Обновить аватар" name="avatar">
+      <PopupWithForm title="Обновить аватар" name="avatar" answer="Сохранить">
          <input type="url" required autoComplete="off" placeholder="Ссылка на аватар"
            className="popup__input popup__input_name popup__input_name-avatar" id="picLink" name="link" />
          <span id="picLink-error" className="error"></span>
       </PopupWithForm>
 
-      <PopupWithForm title="ну вы блин точно Вы уверены?" name="confirm" />
+      <PopupWithForm title="Вы уверены?" name="confirm" answer="Да" />
 
       <Footer />
       
@@ -48,7 +48,7 @@ function App() {
           <h2 className="popup__image-name"></h2>
           <img src="" className="popup__image-place" alt="" />
         </div>
-      </div>
+      </div>  
 
       <template className="template">
         <div className="card">
@@ -69,5 +69,64 @@ function App() {
     </div>
   );
 }
+
+/*
+<div className="popup popup__profile">
+        <div className="popup__container">
+          <button type="button" className="button"><img src={buttonPlus} alt="Закрыть"
+            className="popup__close popup__close_profile" /></button>
+          <h2 className="popup__title popup__title_name">Редактировать профиль</h2>
+          <form className="popup__form popup__form_user" id="form-user" name="user" method="POST">
+            <input type="text" required autoComplete="off" minLength="2" maxLength="40"
+              className="popup__input popup__input_name popup__input_name-profile" id="name" name="name" />
+            <span id="name-error" className="error"></span>
+            <input type="text" required autoComplete="off" minLength="2" maxLength="200" className="popup__input
+              popup__input_description popup__input_description-profile" id="job" name="info" />
+            <span id="job-error" className="error"></span>
+            <button type="submit" className="popup__save">Сохранить</button>
+          </form>
+        </div>
+      </div>
+      <div className="popup popup__card">
+        <div className="popup__container">
+          <button type="button" className="button"><img src={buttonPlus} alt="Закрыть"
+            className="popup__close popup__close_card" /></button>
+          <h2 className="popup__title popup__title_card">Новое место</h2>
+          <form className="popup__form popup__form_place" name="place" method="POST">
+            <input type="text" required autoComplete="off" minLength="2" maxLength="30" placeholder="Название"
+              className="popup__input popup__input_name popup__input_name-card" id="picName" name="name" />
+            <span id="picName-error" className="error"></span>
+            <input type="url" required autoComplete="off" placeholder="Ссылка на картинку"
+              className="popup__input popup__input_description popup__input_url-card" id="picLink" name="link" />
+            <span id="picLink-error" className="error"></span>
+            <button type="submit" className="popup__save">Создать</button>
+          </form>
+        </div>
+      </div>
+  
+      <div className="popup popup__avatar">
+        <div className="popup__container">
+          <button type="button" className="button"><img src={buttonPlus} alt="Закрыть"
+            className="popup__close popup__close_avatar" /></button>
+          <h2 className="popup__title popup__title_avatar">Обновить аватар</h2>
+          <form className="popup__form popup__form_avatar" name="avatar" method="POST">
+            <input type="url" required autoComplete="off" placeholder="Ссылка на аватар"
+              className="popup__input popup__input_name popup__input_name-avatar" id="picLink" name="link" />
+            <span id="picLink-error" className="error"></span>
+            <button type="submit" className="popup__save">Сохранить</button>
+          </form>
+        </div>
+      </div>
+      <div className="popup popup__confirm">
+        <div className="popup__container">
+          <button type="button" className="button"><img src={buttonPlus} alt="Закрыть"
+            className="popup__close popup__close_confirm" /></button>
+          <h2 className="popup__title popup__title_avatar">Вы уверены?</h2>
+          <form className="popup__form popup__form_confirm" name="confirm" method="POST">
+            <button type="submit" className="popup__save">Да</button>
+          </form>
+        </div>
+      </div>
+      */
 
 export default App;

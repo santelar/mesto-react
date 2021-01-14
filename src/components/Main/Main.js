@@ -9,10 +9,10 @@ function Main() {
         document.querySelector('.popup__avatar').classList.add('popup_opened');
     }
     function handleEditProfileClick() {
-        document.querySelector('.popup__profile').classList.add('popup_opened');
+        document.querySelector('.popup__user').classList.add('popup_opened');
     }
     function handleAddPlaceClick() {
-        document.querySelector('.popup__card').classList.add('popup_opened');
+        document.querySelector('.popup__place').classList.add('popup_opened');
     }
 
     return (
