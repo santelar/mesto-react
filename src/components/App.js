@@ -13,31 +13,36 @@ function App() {
     <div className="App">
       <Header />
       <Main />
-      <PopupWithForm title="Редактировать профиль" name="user" answer="Сохранить">
+      <PopupWithForm title="Редактировать профиль" name="user">
         <input type="text" required autoComplete="off" minLength="2" maxLength="40"
           className="popup__input popup__input_name popup__input_name-profile" id="name" name="name" />
         <span id="name-error" className="error"></span>
         <input type="text" required autoComplete="off" minLength="2" maxLength="200" className="popup__input
           popup__input_description popup__input_description-profile" id="job" name="info" />
         <span id="job-error" className="error"></span>
+        <button type="submit" className="popup__save">Сохранить</button>
       </PopupWithForm>
 
-      <PopupWithForm title="Новое место" name="place" answer="Создать">
+      <PopupWithForm title="Новое место" name="place">
         <input type="text" required autoComplete="off" minLength="2" maxLength="30" placeholder="Название"
           className="popup__input popup__input_name popup__input_name-card" id="picName" name="name" />
         <span id="picName-error" className="error"></span>
         <input type="url" required autoComplete="off" placeholder="Ссылка на картинку"
           className="popup__input popup__input_description popup__input_url-card" id="picLink" name="link" />
         <span id="picLink-error" className="error"></span>
+        <button type="submit" className="popup__save">Создать</button>
       </PopupWithForm>
 
-      <PopupWithForm title="Обновить аватар" name="avatar" answer="Сохранить">
+      <PopupWithForm title="Обновить аватар" name="avatar">
          <input type="url" required autoComplete="off" placeholder="Ссылка на аватар"
            className="popup__input popup__input_name popup__input_name-avatar" id="picLink" name="link" />
          <span id="picLink-error" className="error"></span>
+         <button type="submit" className="popup__save">Сохранить</button>
       </PopupWithForm>
 
-      <PopupWithForm title="Вы уверены?" name="confirm" answer="Да" />
+      <PopupWithForm title="Вы уверены?" name="confirm">
+        <button type="submit" className="popup__save">Да</button>
+      </PopupWithForm>
 
       <Footer />
       
