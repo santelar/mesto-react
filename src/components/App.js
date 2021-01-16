@@ -8,12 +8,47 @@ import PopupWithForm from './PopupWithForm/PopupWithForm';
 import buttonPlus from '../images/add-button__plus.svg';
 import trash from '../images/trash.svg';
 
+
 function App() {
+
+  //Хуки состояния - для открытия попапов//
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+
+  //Открытие попапов//
+  function handleEditAvatarClick() {
+    setIsEditAvatarPopupOpen(!isEditAvatarPopupOpen);
+  }
+  function handleEditProfileClick() {
+    setIsEditProfilePopupOpen(!isEditProfilePopupOpen);
+  }
+  function handleAddPlaceClick() {
+    setIsAddPlacePopupOpen(!isAddPlacePopupOpen);
+  }
+
+  //Закрытие попапов//
+  function closeAllPopups() {
+    setIsEditAvatarPopupOpen(false);
+    setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+  }
+
   return (
     <div className="App">
       <Header />
-      <Main />
-      <PopupWithForm title="Редактировать профиль" name="user">
+
+      <Main 
+        onEditAvatar={handleEditAvatarClick}
+        onEditProfile={handleEditProfileClick}
+        onAddPlace={handleAddPlaceClick}
+      /> 
+
+      <PopupWithForm 
+        title="Редактировать профиль"
+        name="user"
+        isOpen={isEditProfilePopupOpen}
+        isClose={closeAllPopups}>
         <input type="text" required autoComplete="off" minLength="2" maxLength="40"
           className="popup__input popup__input_name popup__input_name-profile" id="name" name="name" />
         <span id="name-error" className="error"></span>
@@ -23,7 +58,11 @@ function App() {
         <button type="submit" className="popup__save">Сохранить</button>
       </PopupWithForm>
 
-      <PopupWithForm title="Новое место" name="place">
+      <PopupWithForm 
+        title="Новое место"
+        name="place"
+        isOpen={isAddPlacePopupOpen}
+        isClose={closeAllPopups}>
         <input type="text" required autoComplete="off" minLength="2" maxLength="30" placeholder="Название"
           className="popup__input popup__input_name popup__input_name-card" id="picName" name="name" />
         <span id="picName-error" className="error"></span>
@@ -33,7 +72,11 @@ function App() {
         <button type="submit" className="popup__save">Создать</button>
       </PopupWithForm>
 
-      <PopupWithForm title="Обновить аватар" name="avatar">
+      <PopupWithForm 
+        title="Обновить аватар"
+        name="avatar"
+        isOpen={isEditAvatarPopupOpen}
+        isClose={closeAllPopups}>
          <input type="url" required autoComplete="off" placeholder="Ссылка на аватар"
            className="popup__input popup__input_name popup__input_name-avatar" id="picLink" name="link" />
          <span id="picLink-error" className="error"></span>
