@@ -44,6 +44,10 @@ class Api {
       })
         .then(this._check);
     }
+
+    getInitialData() {
+      return Promise.all([this.getUserData(), this.getCards()]);
+    }
   
     // Изменить данные пользователя
     editUserInfo(data) {
@@ -115,6 +119,4 @@ const api = new Api({
   }
 });
 
-export {
-  api
-};
+export default api;
