@@ -1,10 +1,13 @@
 import React from 'react';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import trash from '../images/trash.svg';
 
-function Card({ card, onCardClick }) {
+function Card({ onCardClick, card, onCardLike }) {
+
+  const currentUser = React.useContext(CurrentUserContext);
 
   function handleCardClick() {
-    onCardClick(card);
+    onCardClick(card, );
   }
 
   return (
