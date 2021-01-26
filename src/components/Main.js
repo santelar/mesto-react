@@ -1,14 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
-
-import api from '../utils/api';
 import Card from './Card';
 
 import load from '../images/editAvatar.svg';
 import profileEdit from '../images/profile__edit.svg';
 import buttonPlus from '../images/add-button__plus.svg';
 
-function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onCardLike }) {
+function Main({ 
+  onEditAvatar,
+  onEditProfile,
+  onAddPlace,
+  onCardClick,
+  cards,
+  onCardLike,
+  onCardDelete }) {
 
   const currentUser = React.useContext(CurrentUserContext);
 
@@ -40,6 +45,7 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onC
                 key={card._id}
                 onCardClick={onCardClick}
                 onCardLike={onCardLike}
+                onCardDelete={onCardDelete}
               />
             );
           })
