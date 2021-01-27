@@ -59,12 +59,10 @@ class Api {
 
   // Изменить аватар //
   editUserPic(image) {
-    return fetch(`${this._url}${this._usersUrl}${this._avatarUrl}`, {
+    return fetch(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
-      body: JSON.stringify({
-        avatar: image
-      })
+      body: JSON.stringify(image)
     })
       .then(this._check);
   }

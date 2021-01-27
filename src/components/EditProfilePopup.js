@@ -51,7 +51,7 @@ function EditProfilePopup(props) {
         className="popup__input popup__input_name popup__input_name-profile"
         id="name"
         name="name"
-        value={name}
+        value={name || ''}
         onChange={handleNameChange}
       />
       <span
@@ -66,7 +66,7 @@ function EditProfilePopup(props) {
         className="popup__input popup__input_description popup__input_description-profile"
         id="job"
         name="info"
-        value={description}
+        value={description || ''}
         onChange={handleDescriptionChange}
       />
       <span

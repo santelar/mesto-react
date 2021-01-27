@@ -106,6 +106,7 @@ function App() {
 
   // Изменение аватара - вызов api запроса //
   function handleUpdateAvatar(image) {
+    console.log(image);
     api.editUserPic(image)
       .then((image) => {
         setСurrentUser(image);

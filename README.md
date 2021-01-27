@@ -1,6 +1,17 @@
 # Продолжение учебной работы курса Яндекс.Практикум. 
 Страница Mesto, выполненная на React - Функциональные компоненты с использованием хуков.
 
+HTML, CSS, JavaScript, React.
+
+Адаптивная верстка,
+Файловая структура организована по БЭМ,
+Flexbox и Grid Layout,
+API,
+Create React App,
+WebPack.
+
+=============================================================================================
+
 Getting Started with Create React App
 This project was bootstrapped with Create React App.
 
